@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+/* ||RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+}
+
+/* ||VARIABLES */
+:root {
+
+    font-size: 16px;
+    --Blue: hsl(246, 80%, 60%);
+    --Light-red-__work: hsl(15, 100%, 70%);
+    --Soft-blue-__play: hsl(195, 74%, 62%);
+    --Light-red-__study: hsl(348, 100%, 68%);
+    --Lime-green-__exercise: hsl(145, 58%, 55%);
+    --Violet-__social: hsl(264, 64%, 52%);
+    --Soft-orange-__self-care: hsl(43, 84%, 65%);
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+
+    /* FONTS */
+    --FONT-W-300: 300;
+    --FONT-W-400: 400;
+    --FONT-W-500: 500;
+}
+
+
+
+/* ||GENERAL STYLES */
+body {
+
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--Very-dark-blue);
+
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+}
+
+.activity-tracker {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2.4rem;
+}
+
+@media screen and (min-width:500px) {
+    body {
+        padding: 5rem;
+    }
+
+    .activity-tracker {
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-template-columns: 1fr 1fr;
+        min-height: 51.8rem;
+        gap: 3rem;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .activity-tracker {
+        grid-template-columns: 1fr 1fr 1fr;
+
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .activity-tracker {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
+}
+
+.activity-tracker__menu {
+    background-color: var(--Dark-blue);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media screen and (min-width:500px) {
+    .activity-tracker__menu {
+        grid-row: 1/3;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+}
+
+.activity-tracker__owner {
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+    background-color: var(--Blue);
+    border-radius: 0 0 10px 10px;
+}
+
+@media screen and (min-width:500px) {
+    .activity-tracker__owner {
+        padding: 1.6rem 1.6rem 4rem 1.6rem;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 3rem;
+        flex: 1 0 auto;
+    }
+}
+
+.activity-tracker__owner-img {
+    width: 4rem;
+    border: 0.3rem solid white;
+    border-radius: 50%;
+}
+
+@media screen and (min-width:500px) {
+    .activity-tracker__owner-img {
+        width: 7.8rem;
+    }
+}
+
+.activity-tracker__owner-container {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.4rem;
+}
+
+@media screen and (min-width:500px) {
+    .activity-tracker__owner-container {
+        gap: 0.3rem;
+        max-width: 60%;
+    }
+
+}
+
+.activity-tracker__owner-for {
+    font-size: 1rem;
+    color: var(--Pale-Blue);
+}
+
+.activity-tracker__owner-name {
+    font-size: 1.5rem;
+    font-weight: var(--FONT-W-300);
+    color: white;
+}
+
+@media screen and (min-width:500px) {
+    .activity-tracker__owner-name {
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+}
+
+.activity-tracker__options {
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+@media screen and (min-width:500px) {
+    .activity-tracker__options {
+        flex-flow: column nowrap;
+        gap: 2.1rem;
+    }
+}
+
+.activity-tracker__option {
+    width: max-content;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--Pale-Blue);
+    transition: color 250ms;
+    cursor: pointer;
+}
+
+@media screen {}
+
+/* .activity-tracker__option:hover,
+.activity-tracker__option:active {
+    color: white;
+} */
+
+.activity-tracker__option:is(:hover, :active) {
+    color: white;
+}
+
+
+/* \\\\\\\ */
+
+
+.activity-tracker__activity {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 2.5rem 1fr;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+@media screen and (min-width:500px) {
+    .activity-tracker__activity {
+        grid-template-rows: 3rem 1fr;
+    }
+}
+
+.work {
+    --background: var(--Light-red-__work);
+}
+
+.play {
+    --background: var(--Soft-blue-__play);
+}
+
+.study {
+    --background: var(--Light-red-__study);
+}
+
+.exercise {
+    --background: var(--Lime-green-__exercise);
+}
+
+.social {
+    --background: var(--Violet-__social);
+}
+
+.self-care {
+    --background: var(--Soft-orange-__self-care);
+}
+
+.activity__bg {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    background: var(--background);
+    display: grid;
+    place-items: start end;
+}
+
+.activity__bg img {
+    transform: translate(-1rem, -.7rem);
+}
+
+.activity__info {
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    background-color: var(--Dark-blue);
+    transition: background 258ms, transform 250ms;
+    padding: 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.6rem;
+    cursor: pointer;
+}
+
+.activity-tracker__activity:hover .activity__info {
+    background-color: hsl(236, 35%, 32%);
+    ;
+}
+
+@media screen and (min-width:500px) {
+    .activity__info {
+        gap: .03rem;
+        padding: 2rem;
+    }
+}
+
+.activity__header,
+.activity__timeframes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media screen and (min-width:500px) {
+    .activity__timeframes {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+}
+
+.activity__name {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+}
+
+.activity__options {
+    transition: white 250ms;
+}
+
+.activity__options:hover svg path {
+    fill: white;
+}
+
+.activity__current-timeframe {
+    font-size: 2rem;
+    font-weight: var(--FONT-W-300);
+    color: white;
+    line-height: 2rem;
+}
+
+.activity__previous-timeframe {
+    display: flex;
+    gap: 0.2rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--Pale-Blue);
+}
+
+@media screen and (min-width:500px) {
+    .activity__current-timeframe {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+}
+
+
+.active {
+    color: white;
+}
