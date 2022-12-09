@@ -216,8 +216,23 @@ body {
     grid-template-columns: 1fr;
     overflow: hidden;
     border-radius: 10px;
+
+    animation: just .8s ease-out;
 }
 
+@keyframes just {
+    0% {
+        transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 @media screen and (min-width:500px) {
     .activity-tracker__activity {
         grid-template-rows: 3rem 1fr;
